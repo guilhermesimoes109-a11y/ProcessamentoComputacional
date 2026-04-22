@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — Montagem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--Body do index, pagina principal --> 
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+        <li><a href="intro.html">Intro</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="arquitetura.html">Arquitetura</a></li>
+        <li><a href="montagem.html" class="active">Montagem</a></li>
+        <li><a href="so.html">SO</a></li>
+        <li><a href="avarias.html">Avarias</a></li>
+        <li><a href="outros.html">Futuro</a></li>
+        <li><a href="conclusao.html">Conclusão</a></li>
+        <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <section class="bg-1">
+      <div class="section-inner">
+        <div class="section-label">04 — Montagem de Hardware</div>
+        <h2 class="section-title">Como Montar<br>um PC</h2>
+        <p class="section-desc">Guia passo a passo para montar um computador do zero, com dicas de segurança e boas práticas.</p>
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num-col"><div class="step-num">01</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Preparação e Segurança</div><div class="step-body">Antes de tocar em qualquer componente, descarrega a eletricidade estática usando uma pulseira antiestática ou tocando numa superfície metálica não pintada. Trabalha numa mesa limpa, seca e bem iluminada. Retira todos os componentes das embalagens e verifica se existem peças em falta ou danificadas.</div><div class="step-tip">Nunca montes sobre carpete — a eletricidade estática pode destruir componentes silenciosamente.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">02</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar o CPU na Motherboard</div><div class="step-body">Abre o socket do CPU (alavanca LGA ou ZIF). Alinha os triângulos de orientação do processador com o socket. Baixa a alavanca sem forçar — o CPU assenta pelo peso. Nunca toca nos pinos (LGA: pinos no socket; AM5: no CPU). Aplica pasta térmica em cruz ou em ponto central.</div><div class="step-tip">LGA (Intel) tem pinos no socket. AM5 (AMD) tem pinos no processador. Nunca forces.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">03</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar o Cooler da CPU</div><div class="step-body">Monta o backplate traseiro (se necessário). Encaixa o cooler sobre o CPU e fixa com os parafusos em padrão cruzado para distribuir a pressão uniformemente. Liga o cabo do cooler ao conector CPU_FAN da motherboard.</div><div class="step-tip">Aperta os parafusos em diagonal (X), nunca em círculo — para pressão uniforme.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">04</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar a RAM</div><div class="step-body">Consulta o manual da motherboard para os slots recomendados para dual-channel (geralmente A2 e B2). Abre as patilhas laterais dos slots, alinha a memória com a ranhura (é assimétrica) e prime firmemente até ouvires o clique. Dual-channel praticamente duplica a largura de banda.</div><div class="step-tip">Para dual channel, usa slots A2+B2 (normalmente os slots 2 e 4). Consulta o manual.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">05</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar o SSD M.2 / NVMe</div><div class="step-body">Localiza o slot M.2 na motherboard (geralmente coberto por heatsink). Remove o heatsink, insere o SSD em ângulo de 30° e prime até baixar. Fixa com o parafuso. Reinstala o heatsink. O slot M.2 principal está tipicamente ligado diretamente ao CPU para máxima velocidade.</div><div class="step-tip">M.2 NVMe é até 7x mais rápido que SATA. Usa sempre o slot mais próximo do CPU.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">06</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar a Motherboard na Caixa</div><div class="step-body">Coloca a chapa I/O shield na caixa. Alinha os orifícios da motherboard com as colunas (standoffs) da caixa. Parafusa em padrão cruzado, sem apertar demasiado para não dobrar a PCB. Liga os cabos do painel frontal (power button, reset, LEDs, USB, áudio).</div><div class="step-tip">Verifica se todas as colunas (standoffs) estão instaladas antes de colocar a motherboard.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">07</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar a GPU</div><div class="step-body">Remove as tampas dos slots PCIe traseiros. Encaixa a GPU no slot PCIe x16 principal (mais próximo do CPU). Prime até ouvir o clique do trinco. Fixa com parafusos. Liga os cabos de alimentação PCIe da PSU (6+2 pinos ou 16 pinos para GPUs modernas).</div><div class="step-tip">GPUs modernas com 3 slots ocupam espaço físico. Verifica a altura disponível na caixa antes de comprar.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">08</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Instalar a PSU e Cablar</div><div class="step-body">Monta a PSU na caixa (ventilador para baixo se houver abertura). Liga: ATX 24 pinos (motherboard), EPS 8 pinos (CPU), PCIe para GPU, SATA para periféricos. Organiza os cabos pelo interior para facilitar o fluxo de ar e fechar a caixa.</div><div class="step-tip">Cable management não é só estética — melhora o fluxo de ar e reduz temperaturas.</div></div></li>
+          <li class="step-item"><div class="step-num-col"><div class="step-num">09</div><div class="step-line"></div></div><div class="step-content"><div class="step-title">Primeiro Arranque e BIOS</div><div class="step-body">Liga o PC e entra na BIOS (tecla DEL ou F2 no arranque). Verifica se todos os componentes são detetados: CPU, RAM (velocidade correta), SSD. Ativa o perfil XMP/EXPO para a RAM correr à velocidade nominal. Configura a ordem de boot. Guarda e reinicia.</div><div class="step-tip">Ativa sempre XMP/EXPO na BIOS — por defeito a RAM corre abaixo da velocidade nominal.</div></div></li>
+        </ul>
+        <div class="checklist">
+          <h3>✅ Checklist de Montagem</h3>
+          <div class="check-item"><div class="check-box"></div>CPU instalado e pasta térmica aplicada</div>
+          <div class="check-item"><div class="check-box"></div>Cooler da CPU fixo e ligado ao CPU_FAN</div>
+          <div class="check-item"><div class="check-box"></div>RAM nos slots corretos para dual-channel</div>
+          <div class="check-item"><div class="check-box"></div>SSD M.2 instalado e fixo</div>
+          <div class="check-item"><div class="check-box"></div>Motherboard fixada na caixa com todos os standoffs</div>
+          <div class="check-item"><div class="check-box"></div>I/O shield da motherboard colocada</div>
+          <div class="check-item"><div class="check-box"></div>GPU instalada no slot PCIe x16 com trinco encaixado</div>
+          <div class="check-item"><div class="check-box"></div>PSU fixada e todos os cabos ligados (ATX 24p, EPS 8p, PCIe)</div>
+          <div class="check-item"><div class="check-box"></div>Cabos do painel frontal ligados (Power, Reset, LEDs, USB)</div>
+          <div class="check-item"><div class="check-box"></div>XMP/EXPO ativado na BIOS</div>
+          <div class="check-item"><div class="check-box"></div>Todos os componentes detetados na BIOS</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="arquitetura.html"><span class="pn-label">← ANTERIOR</span><span class="pn-title">Arquitetura</span></a>
+      <span class="pn-spacer"></span>
+      <a href="so.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Sistema Operativo</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Davi França · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — Outros Tópicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--Body do index, pagina principal --> 
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+        <li><a href="intro.html">Intro</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="arquitetura.html">Arquitetura</a></li>
+        <li><a href="montagem.html">Montagem</a></li>
+        <li><a href="so.html">SO</a></li>
+        <li><a href="avarias.html">Avarias</a></li>
+        <li><a href="outros.html" class="active">Futuro</a></li>
+        <li><a href="conclusao.html">Conclusão</a></li>
+        <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <section class="bg-2">
+      <div class="section-inner">
+        <div class="section-label">07 — Outros Tópicos</div>
+        <h2 class="section-title">Hardware de Redes<br>e o Futuro</h2>
+        <p class="section-desc">Componentes de networking, arquitetura ARM, computação quântica e as tendências que moldam o futuro.</p>
+        <div class="section-label" style="margin-bottom:16px">Hardware de Redes</div>
+        <div class="cards-grid" style="margin-bottom:56px">
+          <div class="card"><div class="card-icon">🔌</div><div class="card-title">Placa de Rede (NIC)</div><div class="card-body">Permite a ligação à rede local. As placas modernas suportam 2.5GbE ou 10GbE. Wi-Fi 6E e Wi-Fi 7 oferecem velocidades gigabit sem fios com baixa latência.</div><span class="card-tag">LAYER 2</span></div>
+          <div class="card"><div class="card-icon">🔀</div><div class="card-title">Switch</div><div class="card-body">Liga múltiplos dispositivos numa rede local. Opera na camada 2 (MAC addresses). Switches gerenciados permitem VLANs, QoS e monitorização de tráfego.</div><span class="card-tag">LAN</span></div>
+          <div class="card"><div class="card-icon">📶</div><div class="card-title">Router</div><div class="card-body">Liga redes diferentes (LAN ↔ WAN/Internet). Opera na camada 3 (IPs). O router doméstico combina router, switch e ponto de acesso Wi-Fi numa única caixa.</div><span class="card-tag">LAYER 3</span></div>
+        </div>
+        <div class="section-label" style="margin-bottom:16px">Tendências e Futuro</div>
+        <div class="future-grid">
+          <div class="future-card"><h3>⚛️ Computação Quântica</h3><p>Os computadores quânticos usam qubits em vez de bits, podendo existir em superposição (0 e 1 simultaneamente). São exponencialmente mais rápidos para certos problemas: criptografia, simulação molecular, otimização. IBM, Google e Microsoft competem neste espaço. Ainda não substituem os PCs clássicos — são complementares para problemas específicos.</p><span class="future-tag">EMERGENTE</span></div>
+          <div class="future-card"><h3>💪 ARM vs x86</h3><p>A arquitetura ARM (RISC) domina os dispositivos móveis há décadas. O Apple M1/M2/M3 demonstrou que ARM pode superar x86 em desempenho por watt. A Microsoft Surface X e Qualcomm Snapdragon X Elite trazem ARM aos portáteis Windows. O futuro aponta para uma convergência entre as duas arquiteturas.</p><span class="future-tag">EM CURSO</span></div>
+          <div class="future-card"><h3>🌐 IoT e Edge Computing</h3><p>A Internet of Things conecta biliões de dispositivos (sensores, eletrodomésticos, câmeras). Edge computing processa os dados perto da fonte, em vez de os enviar para cloud — reduz latência e consumo de largura de banda. Requer chips muito eficientes e especializados, frequentemente baseados em ARM ou RISC-V.</p><span class="future-tag">CRESCIMENTO RÁPIDO</span></div>
+          <div class="future-card"><h3>🤖 IA no Hardware</h3><p>NPUs (Neural Processing Units) estão a ser integradas nos processadores modernos: Apple M-series, AMD Ryzen AI, Intel Meteor Lake. Permitem inferência de IA local sem depender da cloud. Copilot+ PCs exigem 40+ TOPS de desempenho NPU. GPUs continuam a ser o hardware de referência para treino de modelos de linguagem.</p><span class="future-tag">AGORA</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="avarias.html"><span class="pn-label">← ANTERIOR</span><span class="pn-title">Avarias</span></a>
+      <span class="pn-spacer"></span>
+      <a href="conclusao.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Conclusão</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Davi França · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

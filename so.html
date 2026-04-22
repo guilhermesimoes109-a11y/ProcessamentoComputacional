@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — Sistema Operativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--Body do index, pagina principal --> 
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+        <li><a href="intro.html">Intro</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="arquitetura.html">Arquitetura</a></li>
+        <li><a href="montagem.html">Montagem</a></li>
+        <li><a href="so.html" class="active">SO</a></li>
+        <li><a href="avarias.html">Avarias</a></li>
+        <li><a href="outros.html">Futuro</a></li>
+        <li><a href="conclusao.html">Conclusão</a></li>
+        <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <section class="bg-2">
+      <div class="section-inner">
+        <div class="section-label">05 — Sistema Operativo</div>
+        <h2 class="section-title">Instalar e Configurar<br>o Sistema</h2>
+        <p class="section-desc">Escolha do SO, requisitos, processo de instalação e configurações pós-instalação.</p>
+        <div class="os-compare">
+          <div class="os-card"><div class="os-icon">🪟</div><div class="os-name">Windows 11</div><div class="os-feature">Mais utilizado globalmente</div><div class="os-feature">Compatibilidade total com jogos</div><div class="os-feature">Requer TPM 2.0 + CPU recente</div><div class="os-feature">Excelente suporte de hardware</div><div class="os-feature" style="color:var(--accent)">Recomendado para uso geral</div></div>
+          <div class="os-card"><div class="os-icon">🐧</div><div class="os-name">Ubuntu / Linux</div><div class="os-feature">Gratuito e open source</div><div class="os-feature">Muito estável e seguro</div><div class="os-feature">Ideal para desenvolvimento</div><div class="os-feature">Menor consumo de recursos</div><div class="os-feature" style="color:var(--accent)">Recomendado para programação</div></div>
+          <div class="os-card"><div class="os-icon">🍎</div><div class="os-name">macOS</div><div class="os-feature">Exclusivo de hardware Apple</div><div class="os-feature">Integração total hardware/software</div><div class="os-feature">Excelente para criação de conteúdo</div><div class="os-feature">Apple Silicon (ARM) muito eficiente</div><div class="os-feature" style="color:var(--accent)">Recomendado para design/media</div></div>
+        </div>
+        <div class="section-label" style="margin-bottom:16px">Requisitos Windows 11</div>
+        <table class="req-table">
+          <thead><tr><th>Componente</th><th>Mínimo</th><th>Recomendado</th></tr></thead>
+          <tbody><tr><td>CPU</td><td>1 GHz, 2 núcleos, 64-bit</td><td>Intel 12ª gen+ / AMD Ryzen 5000+</td></tr><tr><td>RAM</td><td>4 GB</td><td>16 GB DDR4/DDR5</td></tr><tr><td>Armazenamento</td><td>64 GB</td><td>512 GB SSD NVMe</td></tr><tr><td>Firmware</td><td>UEFI com Secure Boot</td><td>UEFI com Secure Boot ativo</td></tr><tr><td>TPM</td><td>TPM 2.0</td><td>TPM 2.0 (obrigatório)</td></tr><tr><td>Gráficos</td><td>DirectX 12 / WDDM 2.0</td><td>GPU dedicada, 4GB VRAM+</td></tr></tbody>
+        </table>
+        <div class="section-label" style="margin-bottom:16px;margin-top:40px">Processo de Instalação Passo a Passo</div>
+        <div class="install-steps">
+          <div class="install-step"><div class="install-step-num">01</div><div class="install-step-content"><h4>Criar USB Bootável</h4><p>Descarrega a ISO oficial do Windows 11 em microsoft.com. Usa o Rufus (Windows) ou Balena Etcher (multiplataforma) para criar um USB bootável de pelo menos 8GB. Seleciona GPT + UEFI no Rufus para hardware moderno.</p></div></div>
+          <div class="install-step"><div class="install-step-num">02</div><div class="install-step-content"><h4>Configurar a BIOS/UEFI</h4><p>Entra na BIOS (DEL / F2 no arranque). Ativa Secure Boot e confirma que o TPM 2.0 está ativo. Define o USB como primeiro dispositivo de arranque (Boot Order). Guarda e reinicia.</p></div></div>
+          <div class="install-step"><div class="install-step-num">03</div><div class="install-step-content"><h4>Arrancar a partir do USB</h4><p>Arranca a partir do USB de instalação. Escolhe idioma, hora e teclado. Clica em "Instalar Agora". Introduz a chave de produto ou seleciona "Não tenho chave de produto" para ativar depois.</p></div></div>
+          <div class="install-step"><div class="install-step-num">04</div><div class="install-step-content"><h4>Particionamento do Disco</h4><p>Escolhe "Instalação Personalizada". Apaga as partições existentes no disco destino ou cria uma nova. O instalador cria automaticamente as partições necessárias (EFI, MSR, Windows). Para dual-boot, reserva espaço não alocado antes de instalar.</p></div></div>
+          <div class="install-step"><div class="install-step-num">05</div><div class="install-step-content"><h4>Instalação e Configuração Inicial</h4><p>O Windows copia e instala os ficheiros (~15-30 minutos). Após o reinício, o OOBE guia a configuração: região, teclado, conta Microsoft (ou local), privacidade, OneDrive. Cria o teu utilizador e palavra-passe.</p></div></div>
+          <div class="install-step"><div class="install-step-num">06</div><div class="install-step-content"><h4>Drivers e Atualizações Pós-Instalação</h4><p>Windows Update instala drivers básicos automaticamente. Para performance máxima: instala drivers da GPU (NVIDIA/AMD do site oficial), chipset da motherboard, e drivers de áudio e rede. Executa o Windows Update até não haver mais atualizações. Instala o software essencial (browser, antivírus, etc.).</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="montagem.html"><span class="pn-label">← ANTERIOR</span><span class="pn-title">Montagem</span></a>
+      <span class="pn-spacer"></span>
+      <a href="avarias.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Avarias</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Davi França · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — Avarias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+      <!--Body do index, pagina principal --> 
+        <li><a href="intro.html">Intro</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="arquitetura.html">Arquitetura</a></li>
+        <li><a href="montagem.html">Montagem</a></li>
+        <li><a href="so.html">SO</a></li>
+        <li><a href="avarias.html" class="active">Avarias</a></li>
+        <li><a href="outros.html">Futuro</a></li>
+        <li><a href="conclusao.html">Conclusão</a></li>
+        <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <section class="bg-1">
+      <div class="section-inner">
+        <div class="section-label">06 — Deteção de Avarias</div>
+        <h2 class="section-title">Diagnosticar e<br>Resolver Problemas</h2>
+        <p class="section-desc">Identificação dos problemas mais comuns, ferramentas de diagnóstico e procedimentos de troubleshooting.</p>
+        <div class="avaria-grid">
+          <div class="avaria-card"><div class="avaria-header"><div class="avaria-icon">🔴</div><div class="avaria-title">PC Não Arranca (No POST)</div><div class="avaria-severity sev-high">CRÍTICO</div></div><div class="avaria-body">O PC liga (LEDs acendem, ventoinhas giram) mas não aparece imagem. Pode ser RAM mal encaixada, CPU não assentado, ou falha na PSU. O POST (Power-On Self-Test) é a verificação inicial de hardware ao ligar.</div><div class="avaria-fix">→ Testa com 1 stick de RAM · Reencaixa CPU · Verifica todos os cabos de alimentação · Testa com GPU integrada se possível</div></div>
+          <div class="avaria-card"><div class="avaria-header"><div class="avaria-icon">🔵</div><div class="avaria-title">BSOD (Blue Screen of Death)</div><div class="avaria-severity sev-high">ALTO</div></div><div class="avaria-body">Ecrã azul com código de erro. Causas comuns: drivers corrompidos, RAM com erros, overheating do CPU/GPU, ou disco com setores defeituosos. O código de erro é fundamental para diagnosticar.</div><div class="avaria-fix">→ Anota o código de erro · Executa MemTest86 (RAM) · Verifica Event Viewer · Atualiza/reinstala drivers · chkdsk /f no disco</div></div>
+          <div class="avaria-card"><div class="avaria-header"><div class="avaria-icon">🌡️</div><div class="avaria-title">Overheating — Sobreaquecimento</div><div class="avaria-severity sev-med">MÉDIO</div></div><div class="avaria-body">CPU acima de 95°C ou GPU acima de 90°C em carga. Causa desempenho reduzido (throttling) e pode danificar componentes. Frequente após longo período de uso pela degradação da pasta térmica.</div><div class="avaria-fix">→ Limpa o pó dos coolers e radiadores · Substitui pasta térmica · Verifica ventoinhas · Melhora fluxo de ar na caixa</div></div>
+          <div class="avaria-card"><div class="avaria-header"><div class="avaria-icon">💾</div><div class="avaria-title">Disco Lento ou Avariado</div><div class="avaria-severity sev-med">MÉDIO</div></div><div class="avaria-body">Arranque muito lento, ficheiros corrompidos, ou disco não detetado. HDDs têm vida útil limitada (~3-5 anos em uso intensivo). Os SSDs degradam-se com ciclos de escrita mas são geralmente mais fiáveis.</div><div class="avaria-fix">→ CrystalDiskInfo para ver health S.M.A.R.T. · chkdsk /r para erros · Faz backup imediato se health = caution/bad</div></div>
+          <div class="avaria-card"><div class="avaria-header"><div class="avaria-icon">🔊</div><div class="avaria-title">Sem Áudio</div><div class="avaria-severity sev-low">BAIXO</div></div><div class="avaria-body">Sem som ou microfone não funciona. Geralmente causado por driver de áudio incorreto, dispositivo de saída errado selecionado no Windows, ou cabo jack mal ligado.</div><div class="avaria-fix">→ Verifica dispositivo de saída padrão · Reinstala driver de áudio · Testa com headphones por USB · Verifica ligações físicas</div></div>
+          <div class="avaria-card"><div class="avaria-header"><div class="avaria-icon">🌐</div><div class="avaria-title">Sem Internet / Rede Lenta</div><div class="avaria-severity sev-low">BAIXO</div></div><div class="avaria-body">Sem acesso à internet ou velocidades muito abaixo do contratado. Pode ser falha de driver de rede, problema no router, cabo danificado ou conflito de IP na rede local.</div><div class="avaria-fix">→ ipconfig /flushdns e /release /renew · Reinstala driver de rede · Testa com cabo direto ao router · Reinicia router/modem</div></div>
+        </div>
+        <div class="section-label" style="margin-bottom:16px;margin-top:8px">Ferramentas de Diagnóstico</div>
+        <div class="tools-grid">
+          <div class="tool-item"><div class="tool-icon">🧠</div><div><div class="tool-name">CPU-Z / HWiNFO64</div><div class="tool-desc">Informação detalhada de CPU, RAM, motherboard e sensores de temperatura em tempo real.</div></div></div>
+          <div class="tool-item"><div class="tool-icon">📊</div><div><div class="tool-name">GPU-Z / MSI Afterburner</div><div class="tool-desc">Monitorização de GPU: temperatura, clock, uso, VRAM. Afterburner permite overclock e fan curves.</div></div></div>
+          <div class="tool-item"><div class="tool-icon">💽</div><div><div class="tool-name">CrystalDiskInfo</div><div class="tool-desc">Estado S.M.A.R.T. de discos. Mostra horas de uso, reallocated sectors e health geral.</div></div></div>
+          <div class="tool-item"><div class="tool-icon">🔬</div><div><div class="tool-name">MemTest86</div><div class="tool-desc">Testa a RAM a fundo, fora do sistema operativo. Ideal para diagnosticar BSODs e instabilidade.</div></div></div>
+          <div class="tool-item"><div class="tool-icon">🔥</div><div><div class="tool-name">Prime95 / FurMark</div><div class="tool-desc">Stress test de CPU (Prime95) e GPU (FurMark) para testar estabilidade e temperaturas máximas.</div></div></div>
+          <div class="tool-item"><div class="tool-icon">🛠️</div><div><div class="tool-name">Windows Event Viewer</div><div class="tool-desc">Registo de erros do sistema. Essencial para perceber a causa de crashes e BSODs.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="so.html"><span class="pn-label">← ANTERIOR</span><span class="pn-title">Sistema Operativo</span></a>
+      <span class="pn-spacer"></span>
+      <a href="outros.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Outros Tópicos</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Davi França · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

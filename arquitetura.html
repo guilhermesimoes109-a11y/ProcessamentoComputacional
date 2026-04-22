@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — Arquitetura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+      <!--Body do index, pagina principal --> 
+        <li><a href="intro.html">Intro</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="arquitetura.html" class="active">Arquitetura</a></li>
+        <li><a href="montagem.html">Montagem</a></li>
+        <li><a href="so.html">SO</a></li>
+        <li><a href="avarias.html">Avarias</a></li>
+        <li><a href="outros.html">Futuro</a></li>
+        <li><a href="conclusao.html">Conclusão</a></li>
+        <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <section class="bg-2">
+      <div class="section-inner">
+        <div class="section-label">03 — Arquitetura de Hardware</div>
+        <h2 class="section-title">Dentro de um<br>Computador Moderno</h2>
+        <p class="section-desc">Da arquitetura de 16 bits aos processadores de 64 bits modernos — e como cada componente contribui para o sistema.</p>
+        <div class="section-label" style="margin-bottom:12px">Evolução da Arquitetura de Processadores</div>
+        <div class="arch-evolution">
+          <div class="arch-step"><div class="arch-step-box">Intel 8086</div><div class="arch-step-label">16-bit · 1978</div></div><div class="arch-arrow"></div>
+          <div class="arch-step"><div class="arch-step-box">80386</div><div class="arch-step-label">32-bit · 1985</div></div><div class="arch-arrow"></div>
+          <div class="arch-step"><div class="arch-step-box">Pentium</div><div class="arch-step-label">x86 · 1993</div></div><div class="arch-arrow"></div>
+          <div class="arch-step"><div class="arch-step-box">x86-64</div><div class="arch-step-label">64-bit · 2003</div></div><div class="arch-arrow"></div>
+          <div class="arch-step"><div class="arch-step-box">Multi-core</div><div class="arch-step-label">2+núcleos · 2005</div></div><div class="arch-arrow"></div>
+          <div class="arch-step"><div class="arch-step-box">ARM / Apple M</div><div class="arch-step-label">RISC · 2020+</div></div>
+        </div>
+        <div class="section-label" style="margin-bottom:16px">Componentes Principais</div>
+        <table class="components-table">
+          <thead><tr><th>Componente</th><th>Função</th><th>Exemplos Atuais</th></tr></thead>
+          <tbody>
+            <tr><td>CPU</td><td>Processador central — executa instruções, cálculos e coordena os restantes componentes. Medido em GHz e número de núcleos.</td><td>Intel Core i9-14900K, AMD Ryzen 9 7950X</td></tr>
+            <tr><td>GPU</td><td>Processamento gráfico paralelo. Essencial para jogos, renderização 3D e IA. Tem a sua própria VRAM dedicada.</td><td>NVIDIA RTX 4090, AMD RX 7900 XTX</td></tr>
+            <tr><td>RAM</td><td>Memória volátil de acesso rápido. Armazena dados e programas em uso. Quanto mais RAM, mais tarefas simultâneas.</td><td>DDR5-6000, 32GB–128GB</td></tr>
+            <tr><td>Motherboard</td><td>Placa principal que interliga todos os componentes. Define compatibilidade de CPU, RAM e expansão PCIe.</td><td>ASUS ROG Strix Z790-E, MSI MAG X670E</td></tr>
+            <tr><td>SSD / NVMe</td><td>Armazenamento não volátil de alta velocidade. NVMe via PCIe é até 7x mais rápido que SATA. Substitui o HDD tradicional.</td><td>Samsung 990 Pro, WD Black SN850X</td></tr>
+            <tr><td>PSU</td><td>Fonte de alimentação. Converte AC em DC e distribui energia por todos os componentes. Eficiência 80+ é essencial.</td><td>Corsair RM1000x, be quiet! Straight Power</td></tr>
+            <tr><td>Cooler / AIO</td><td>Dissipa o calor gerado pela CPU. Stock coolers são suficientes em uso normal; AIOs para overclock ou processadores topo de gama.</td><td>Noctua NH-D15, NZXT Kraken 360</td></tr>
+          </tbody>
+        </table>
+        <div class="section-label" style="margin-bottom:16px;margin-top:40px">Tipos de Periféricos</div>
+        <div class="cards-grid">
+          <div class="card"><div class="card-icon">⌨️</div><div class="card-title">Periféricos de Entrada</div><div class="card-body">Dispositivos que enviam dados para o computador: teclado, rato, scanner, microfone, câmara web, pen gráfica, gamepad, leitor de impressões digitais.</div><span class="card-tag">INPUT</span></div>
+          <div class="card"><div class="card-icon">🖥️</div><div class="card-title">Periféricos de Saída</div><div class="card-body">Dispositivos que apresentam resultados ao utilizador: monitor, impressora, colunas, projetor, headphones. O monitor é o periférico de saída mais crítico.</div><span class="card-tag">OUTPUT</span></div>
+          <div class="card"><div class="card-icon">💾</div><div class="card-title">Armazenamento</div><div class="card-body">HDD (magnético, mais capacidade, mais lento), SSD SATA, SSD NVMe (mais rápido), pen USB, cartão SD, discos externos, armazenamento em cloud.</div><span class="card-tag">STORAGE</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="historia.html"><span class="pn-label">← ANTERIOR</span><span class="pn-title">História</span></a>
+      <span class="pn-spacer"></span>
+      <a href="montagem.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Montagem</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Davi França · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

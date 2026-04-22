@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — História</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+      <!--Body do index, pagina principal --> 
+        <li><a href="intro.html">Intro</a></li>
+        <li><a href="historia.html" class="active">História</a></li>
+        <li><a href="arquitetura.html">Arquitetura</a></li>
+        <li><a href="montagem.html">Montagem</a></li>
+        <li><a href="so.html">SO</a></li>
+        <li><a href="avarias.html">Avarias</a></li>
+        <li><a href="outros.html">Futuro</a></li>
+        <li><a href="conclusao.html">Conclusão</a></li>
+        <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <section class="bg-1">
+      <div class="section-inner">
+        <div class="section-label">02 — História da Informática</div>
+        <h2 class="section-title">De 1940 ao<br>Presente</h2>
+        <p class="section-desc">Uma breve cronologia da evolução dos computadores, dos primeiros colossais às máquinas que cabem no bolso.</p>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1945 — 1950s</div><div class="tl-title">Os Primeiros Computadores</div><div class="tl-body">Máquinas como o ENIAC (1945) ocupavam salas inteiras e eram programadas fisicamente através de cabos e interruptores. Utilizavam válvulas termoiónicas e consumiam quantidades enormes de energia. O ENIAC pesava 30 toneladas e continha mais de 18 000 válvulas.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1950s — 1960s</div><div class="tl-title">Era dos Transístores</div><div class="tl-body">A invenção do transístor em 1947 (Bell Labs) revolucionou a eletrónica. Os computadores tornaram-se menores, mais rápidos e mais fiáveis. Surgiram as primeiras linguagens de programação de alto nível como FORTRAN e COBOL.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1970s</div><div class="tl-title">Microprocessadores e o PC</div><div class="tl-body">A Intel lança o 4004, o primeiro microprocessador comercial (1971). Em 1975 surge o Altair 8800, considerado o primeiro computador pessoal. Apple e Microsoft nascem nesta década. O IBM PC (1981) estabelece a arquitetura x86 que domina até hoje.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1980s — 1990s</div><div class="tl-title">Interface Gráfica e Internet</div><div class="tl-body">O Macintosh (1984) populariza a interface gráfica. O Windows 95 marca a democratização do PC. A World Wide Web (1991) e os browsers transformam os computadores em ferramentas de comunicação global. Os processadores passam de 8MHz para centenas de MHz.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2000s</div><div class="tl-title">Multi-core e Mobilidade</div><div class="tl-body">Os processadores atingem o limite de frequência e evoluem para múltiplos núcleos. Os portáteis superam as vendas dos desktops. O iPhone (2007) inaugura a era dos smartphones com arquitetura ARM. SSD começa a substituir o HDD.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2010s — Hoje</div><div class="tl-title">IA, Cloud e ARM</div><div class="tl-body">A computação em nuvem muda o paradigma de armazenamento. A IA e o Machine Learning exigem GPUs cada vez mais poderosas. O Apple M1 (2020) demonstra que ARM pode superar x86 em eficiência energética. Surgem os LLMs e a IA generativa como tecnologia de consumo.</div></div>
+        </div>
+        <div style="margin-top:64px">
+          <div class="section-label">Evolução dos Telemóveis</div>
+          <h3 style="font-size:24px;font-weight:800;margin-bottom:16px">Das Chamadas ao Supercomputador de Bolso</h3>
+          <p style="color:var(--muted);font-size:14px;max-width:700px;margin-bottom:36px;line-height:1.8">O primeiro telemóvel comercial surge em 1983 (Motorola DynaTAC). O SMS chega em 1992. O primeiro smartphone com ecrã tátil capacitivo — o iPhone — em 2007. Hoje, um smartphone de gama média tem mais poder de processamento do que os supercomputadores dos anos 90.</p>
+          <div class="cards-grid">
+            <div class="card"><div class="card-icon">📡</div><div class="card-title">1G — Analógico (1980s)</div><div class="card-body">Primeiras redes celulares. Apenas voz analógica. Equipamentos enormes e caros. Motorola DynaTAC pesava quase 1kg.</div><span class="card-tag">VOZ APENAS</span></div>
+            <div class="card"><div class="card-icon">💬</div><div class="card-title">2G — Digital + SMS (1990s)</div><div class="card-body">GSM digitaliza as comunicações. Surge o SMS (1992). Novas possibilidades: chamadas mais claras, seguras e baratas. Nokia domina o mercado.</div><span class="card-tag">VOZ + DADOS BÁSICOS</span></div>
+            <div class="card"><div class="card-icon">🌐</div><div class="card-title">3G/4G — Internet Móvel</div><div class="card-body">3G (2000s) traz a internet ao telemóvel. 4G LTE (2010s) permite streaming em HD. App stores transformam os telefones em plataformas de software.</div><span class="card-tag">INTERNET RÁPIDA</span></div>
+            <div class="card"><div class="card-icon">⚡</div><div class="card-title">5G — Hiperconectividade</div><div class="card-body">Latências abaixo de 1ms. Velocidades de Gbps. Viabiliza IoT, veículos autónomos e cidades inteligentes. ARM domina a arquitetura móvel.</div><span class="card-tag">IOT + EDGE</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="intro.html"><span class="pn-label">← ANTERIOR</span><span class="pn-title">Introdução</span></a>
+      <span class="pn-spacer"></span>
+      <a href="arquitetura.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Arquitetura</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Davi França · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
