@@ -975,12 +975,12 @@ section { position: relative; z-index: 1; }
   transition: width 1.2s ease;
 }
 
-/* AUTORES */
 .autores-grid {
-  justify-content: center
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px; /* aumenta este valor para mais espaçamento */
+  margin-top: 10px;
 }
 
 .autor-card {
