@@ -8,45 +8,358 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── INDEX-ONLY OVERRIDES ── */
+
+    .hero {
+      min-height: calc(100vh - 60px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 80px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 100% 100% at 60% 50%, black 20%, transparent 80%);
+      pointer-events: none;
+    }
+
+    .hero-glow { display: none; }
+
+    .hero-left { position: relative; z-index: 2; }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      background: none;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.1s;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--muted);
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2.5px;
+      color: var(--text);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.25s;
+      position: relative;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.4s;
+      font-family: var(--mono);
+      position: relative;
+      max-width: 420px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.55s;
+      position: relative;
+      justify-content: flex-start;
+      margin-top: 0;
+    }
+
+    .hero-cta a:first-child {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #000;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .hero-cta a:first-child:hover { opacity: 0.85; transform: none; }
+
+    .hero-cta a:last-child {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .hero-cta a:last-child:hover {
+      color: var(--text);
+      border-color: #2e4156;
+      background: transparent;
+      transform: none;
+    }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+
+    .hero-meta { display: none; }
+
+    /* Info panel */
+    .info-panel {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .info-panel-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .info-panel-header span {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(30,45,61,0.6);
+      gap: 20px;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-key {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    .info-val {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: right;
+    }
+
+    .info-val.accent {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    /* Topic tags below panel */
+    .hero-topics {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .topic-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 10px;
+      background: var(--bg2);
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 1s;
+    }
+
+    .scroll-hint span {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 80px;
+        gap: 48px;
+        text-align: center;
+      }
+      .hero-tag { justify-content: center; }
+      .hero-cta { justify-content: center; }
+      .hero-sub { max-width: 100%; }
+      .hero-topics { justify-content: center; }
+    }
+  </style>
 </head>
-
-<!--Body do index, pagina principal --> 
-
 <body>
+
   <nav class="site-nav">
     <a href="index.html" class="nav-logo">UFCD_0802</a>
     <ul class="nav-links">
-        <li><a href="indice.html">Índice</a></li>
-        <li><a href="intro.html">Intro</a></li>
-        <li><a href="conclusao.html">Conclusão</a></li>
-        <li><a href="autores.html">Autores</a></li>
+      <li><a href="indice.html">Índice</a></li>
+      <li><a href="intro.html">Intro</a></li>
+      <li><a href="conclusao.html">Conclusão</a></li>
+      <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
- 
-  <div class="page-wrap">
 
+  <div class="page-wrap">
     <section class="hero">
       <div class="hero-grid"></div>
-      <div class="hero-glow"></div>
-      <div class="hero-tag">UFCD 0802 — Processamento Computacional</div>
-      <h1>História dos PCs,<br><span>Hardware</span> & Software</h1>
-      <p class="hero-sub">Arquitetura · Montagem · Sistemas Operativos · Deteção de Avarias<br>Academia de Formação ATEC · 2024/2025</p>
-      <div class="hero-meta">
-        <div class="hero-meta-item"><span class="hero-meta-label">Formador</span><span class="hero-meta-value">Prof. Nuno Ramos</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-label">UFCD</span><span class="hero-meta-value">0802</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-label">Projeto</span><span class="hero-meta-value">HTML+</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-label">Autores</span><span class="hero-meta-value">Bruno Velhinho e <br>Guilherme Simões</span></div>
+
+      <!-- ESQUERDA -->
+      <div class="hero-left">
+        <div class="hero-tag">UFCD 0802 — Processamento Computacional</div>
+
+        <h1>Hardware,<br><span>Software</span><br>& História</h1>
+
+        <p class="hero-sub">
+          Arquitetura · Montagem · Sistemas Operativos<br>
+          Deteção de Avarias · ATEC 2024/2025
+        </p>
+
+        <div class="hero-cta">
+          <a href="indice.html">Ver índice →</a>
+          <a href="autores.html">Autores</a>
+        </div>
       </div>
-      <div class="hero-cta">
-        <a href="indice.html">Começar →</a>
-        <a href="autores.html">Ver autores</a>
+
+      <!-- DIREITA -->
+      <div class="hero-right">
+        <div class="info-panel">
+          <div class="info-panel-header">
+            <span>Ficha do projeto</span>
+            <span style="color: var(--accent);">●</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Curso</span>
+            <span class="info-val">Processamento Computacional</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">UFCD</span>
+            <span class="info-val accent">0802</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Instituição</span>
+            <span class="info-val">Academia ATEC</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Formador</span>
+            <span class="info-val">Prof. Nuno Ramos</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Autores</span>
+            <span class="info-val">Bruno Velhinho<br>Guilherme Simões</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Ano letivo</span>
+            <span class="info-val accent">2024 / 2025</span>
+          </div>
+        </div>
+
+        <div class="hero-topics">
+          <span class="topic-tag">História dos PCs</span>
+          <span class="topic-tag">Arquitetura</span>
+          <span class="topic-tag">Montagem</span>
+          <span class="topic-tag">Sistemas Operativos</span>
+          <span class="topic-tag">Avarias</span>
+          <span class="topic-tag">HTML+</span>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
     <div class="page-nav">
       <span></span>
       <span class="pn-spacer"></span>
-      <a href="indice.html"><span class="pn-label" style="text-align:right">PRÓXIMO →</span><span class="pn-title">Índice</span></a>
+      <a href="indice.html">
+        <span class="pn-label" style="text-align:right">PRÓXIMO →</span>
+        <span class="pn-title">Índice</span>
+      </a>
     </div>
   </div>
 
