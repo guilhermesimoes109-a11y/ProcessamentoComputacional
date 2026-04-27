@@ -1,1 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFCD 0802 — Início</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── INDEX HERO OVERRIDE ── */
+    .hero {
+      min-height: calc(100vh - 56px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      padding: 0;
+      max-width: 100%;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.35;
+      mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    .hero-glow { display: none; }
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      padding: 80px 64px 80px 80px;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.1s;
+      border: none;
+      background: none;
+      padding: 0;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--border2);
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 5.5vw, 80px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -3.5px;
+      color: var(--text);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.2s;
+      position: relative;
+    }
+
+    .hero h1 .dim { color: var(--text2); }
+
+    .hero-sub {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.9;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.3s;
+      font-family: var(--mono);
+      position: relative;
+      max-width: 380px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.38s;
+      position: relative;
+      justify-content: flex-start;
+      margin-top: 0;
+    }
+
+    .hero-cta a {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      color: #000;
+      background: var(--text);
+      border: 1px solid var(--text);
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .hero-cta a:hover { opacity: 0.85; transform: none; }
+
+    .hero-cta a.secondary {
+      color: var(--text2);
+      background: transparent;
+      border: 1px solid var(--border2);
+    }
+
+    .hero-cta a.secondary:hover {
+      color: var(--text);
+      border-color: var(--text2);
+      background: var(--surface2);
+      transform: none;
+    }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.25s;
+      border-left: 1px solid var(--border);
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 64px;
+    }
+
+    .hero-meta { display: none; }
+
+    /* Info panel */
+    .info-panel {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .info-panel-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface2);
+    }
+
+    .info-panel-header span {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-key {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      flex-shrink: 0;
+    }
+
+    .info-val {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      text-align: right;
+      font-family: var(--sans);
+    }
+
+    .info-val.mono {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text2);
+    }
+
+    /* Topic tags */
+    .hero-topics {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.4s;
+    }
+
+    .topic-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 8px;
+      background: var(--surface);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .topic-tag:hover { border-color: var(--border2); color: var(--text2); }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.8s;
+    }
+
+    .scroll-hint span {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--text3);
+      letter-spacing: 1px;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(to bottom, var(--border2), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 0 80px;
+        gap: 0;
+        text-align: center;
+      }
+      .hero-left { padding: 60px 24px 40px; }
+      .hero-tag { justify-content: center; }
+      .hero-cta { justify-content: center; }
+      .hero-sub { max-width: 100%; }
+      .hero-topics { justify-content: center; }
+      .hero-right {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding: 40px 24px;
+        align-self: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">UFCD_0802</a>
+    <ul class="nav-links">
+      <li><a href="indice.html">Índice</a></li>
+      <li><a href="intro.html">Intro</a></li>
+      <li><a href="conclusao.html">Conclusão</a></li>
+      <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+    <section class="hero">
+      <div class="hero-grid"></div>
+
+      <!-- ESQUERDA -->
+      <div class="hero-left">
+        <div class="hero-tag">UFCD 0802 — ATEC 2024/2025</div>
+
+        <h1>Hardware,<br><span class="dim">Software</span><br>& História.</h1>
+
+        <p class="hero-sub">
+          Arquitetura · Montagem · Sistemas Operativos<br>
+          Deteção de Avarias
+        </p>
+
+        <div class="hero-cta">
+          <a href="indice.html">Ver índice</a>
+          <a href="autores.html" class="secondary">Autores →</a>
+        </div>
+      </div>
+
+      <!-- DIREITA -->
+      <div class="hero-right">
+        <div class="info-panel">
+          <div class="info-panel-header">
+            <span>Ficha do projeto</span>
+            <div class="status-dot"></div>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Curso</span>
+            <span class="info-val">Processamento Computacional</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">UFCD</span>
+            <span class="info-val mono">0802</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Instituição</span>
+            <span class="info-val">Academia ATEC</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Formador</span>
+            <span class="info-val">Prof. Nuno Ramos</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Autores</span>
+            <span class="info-val">Bruno Velhinho<br>Guilherme Simões</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Ano letivo</span>
+            <span class="info-val mono">2024 / 2025</span>
+          </div>
+        </div>
+
+        <div class="hero-topics">
+          <span class="topic-tag">História dos PCs</span>
+          <span class="topic-tag">Arquitetura</span>
+          <span class="topic-tag">Montagem</span>
+          <span class="topic-tag">Sistemas Operativos</span>
+          <span class="topic-tag">Avarias</span>
+          <span class="topic-tag">HTML+</span>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <span></span>
+      <span class="pn-spacer"></span>
+      <a href="indice.html">
+        <span class="pn-label" style="text-align:right">PRÓXIMO →</span>
+        <span class="pn-title">Índice</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo">UFCD_0802 — PROCESSAMENTO COMPUTACIONAL</div>
+    <div class="footer-meta">
+      Grupo 3 · Bruno Velhinho · Guilherme Simões<br>
+      Prof. Nuno Ramos · ATEC · 2025/2026
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
