@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download — Computational Processing</title>
+    <meta name="description" content="A app Computational Processing está pronta para download." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+
+    <header class="nav">
+      <a href="./index.html" class="brand">UFCD_0802</a>
+      <nav class="nav-links">
+        <a href="./index.html">INSTALLER</a>
+        <a href="./download.html" class="active">DOWNLOAD</a>
+        <a href="https://ufcd-0802-processamento-computacion.vercel.app/" target="_blank" rel="noopener">SITE PRINCIPAL ↗</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-tag">DOWNLOAD · PRONTO A INSTALAR</div>
+        <h1 class="hero-title">
+          <span class="accent">Computational Processing</span><br />
+          pronto para o <span class="accent">download</span>
+        </h1>
+        <p class="hero-sub">
+          A aplicação está disponível para o teu sistema
+        </p>
+        <p class="hero-meta">UFCD 0802 · App oficial do projeto</p>
+
+        <div class="meta-row">
+          <div class="meta-cell">
+            <span class="meta-label">APP</span>
+            <span class="meta-value">Comp. Processing</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">VERSÃO</span>
+            <span class="meta-value">1.0.0</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">PLATAFORMAS</span>
+            <span class="meta-value">Win · macOS · Linux</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">LICENÇA</span>
+            <span class="meta-value">Educacional</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary">VER OPÇÕES &nbsp;↓</a>
+          <a href="./index.html" class="btn btn-ghost">← VOLTAR</a>
+        </div>
+      </section>
+
+      <section class="section" id="download">
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2>Escolhe o teu sistema</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Seleciona o teu sistema operativo e carrega no botão de download.
+            O ficheiro da app <strong>Computational Processing</strong> será
+            colocado aqui posteriormente.
+          </p>
+
+          <div class="install-card">
+            <div class="install-tabs" role="tablist">
+              <button class="tab active" data-os="windows" role="tab">Windows</button>
+              <button class="tab" data-os="macos" role="tab">macOS</button>
+              <button class="tab" data-os="linux" role="tab">Linux</button>
+            </div>
+
+            <div class="install-panel" id="installPanel">
+              <div class="install-info">
+                <p class="install-title">Download para <span id="osName">Windows</span></p>
+                <p class="install-sub" id="osLine">Compatível com Windows 10/11 · 64-bit</p>
+              </div>
+              <a href="#" class="btn btn-primary install-btn" id="installBtn" download>
+                DESCARREGAR APP &nbsp;↓
+              </a>
+            </div>
+
+            <div class="progress" id="progress" hidden>
+              <div class="progress-head">
+                <span id="progressLabel">A preparar download…</span>
+                <span id="progressPct">0%</span>
+              </div>
+              <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+              <p class="progress-foot" id="progressFoot">A verificar versão disponível</p>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            * O ficheiro do instalador ainda não está colocado neste site.
+            Quando for adicionado, este botão entregará automaticamente a app
+            Computational Processing para o sistema selecionado.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="info">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2>O que vais receber</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature">
+            <span class="feature-icon">⊞</span>
+            <h3>Aplicação completa</h3>
+            <p>A app Computational Processing pronta a executar no teu sistema.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon">⌘</span>
+            <h3>Conteúdo do projeto</h3>
+            <p>Material da UFCD 0802 organizado dentro da própria app.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon">✦</span>
+            <h3>Atualizações futuras</h3>
+            <p>Esta página será mantida sempre que sair uma nova versão.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-line">
+        <span>UFCD 0802 · Processamento Computacional</span>
+        <span class="dot">·</span>
+        <span>Página de download da app</span>
+      </div>
+      <a href="./index.html" class="back-top">← INSTALLER</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
