@@ -7,72 +7,76 @@
     <meta name="description" content="A app Computational Processing está pronta para download." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="grid-bg"></div>
 
-    <header class="nav">
-      <a href="./index.html" class="brand">UFCD_0802</a>
-      <nav class="nav-links">
-        <a href="./index.html">INSTALLER</a>
-        <a href="./download.html" class="active">DOWNLOAD</a>
-        <a href="https://ufcd-0802-processamento-computacion.vercel.app/" target="_blank" rel="noopener">SITE PRINCIPAL ↗</a>
-      </nav>
+    <nav class="site-nav">
+      <span class="nav-logo">UFCD_0802</span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./index.html">Installer</a></li>
+        <li><a href="./download.html" class="active">Download</a></li>
+        <li><a href="https://ufcd-0802-processamento-computacion.vercel.app/" target="_blank" rel="noopener">Site principal ↗</a></li>
+      </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-    </header>
+    </nav>
 
-    <main>
-      <section class="hero" id="top">
-        <div class="hero-tag">DOWNLOAD · PRONTO A INSTALAR</div>
-        <h1 class="hero-title">
-          <span class="accent">Computational Processing</span><br />
-          pronto para o <span class="accent">download</span>
+    <div class="page-wrap">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-grid"></div>
+
+        <div class="hero-tag">Download · Pronto a instalar</div>
+
+        <h1>
+          <span class="muted">Computational</span><br />
+          Processing
         </h1>
-        <p class="hero-sub">
-          A aplicação está disponível para o teu sistema
-        </p>
-        <p class="hero-meta">UFCD 0802 · App oficial do projeto</p>
+
+        <p class="hero-sub">A aplicação está disponível para o teu sistema</p>
+        <p class="hero-meta-line">UFCD 0802 · App oficial do projeto</p>
 
         <div class="meta-row">
           <div class="meta-cell">
-            <span class="meta-label">APP</span>
+            <span class="meta-label">App</span>
             <span class="meta-value">Comp. Processing</span>
           </div>
           <div class="meta-cell">
-            <span class="meta-label">VERSÃO</span>
+            <span class="meta-label">Versão</span>
             <span class="meta-value">1.0.0</span>
           </div>
           <div class="meta-cell">
-            <span class="meta-label">PLATAFORMAS</span>
+            <span class="meta-label">Plataformas</span>
             <span class="meta-value">Win · macOS · Linux</span>
           </div>
           <div class="meta-cell">
-            <span class="meta-label">LICENÇA</span>
+            <span class="meta-label">Licença</span>
             <span class="meta-value">Educacional</span>
           </div>
         </div>
 
         <div class="hero-actions">
-          <a href="#download" class="btn btn-primary">VER OPÇÕES &nbsp;↓</a>
-          <a href="./index.html" class="btn btn-ghost">← VOLTAR</a>
+          <a href="#download" class="btn btn-primary">Ver opções ↓</a>
+          <a href="./index.html" class="btn btn-ghost">← Voltar</a>
         </div>
       </section>
 
-      <section class="section" id="download">
-        <div class="section-head">
-          <span class="section-num">01</span>
-          <h2>Escolhe o teu sistema</h2>
-        </div>
-        <div class="section-body">
-          <p>
-            Seleciona o teu sistema operativo e carrega no botão de download.
-            O ficheiro da app <strong>Computational Processing</strong> será
-            colocado aqui posteriormente.
-          </p>
+      <!-- DOWNLOAD -->
+      <section>
+        <div class="section-inner" id="download">
+          <p class="section-label">01 — download</p>
+          <h2 class="section-title">Escolhe o teu sistema</h2>
+          <div class="section-body">
+            <p>
+              Seleciona o teu sistema operativo e carrega no botão de download.
+              O ficheiro da app <strong>Computational Processing</strong> será
+              colocado aqui posteriormente.
+            </p>
+          </div>
 
           <div class="install-card">
             <div class="install-tabs" role="tablist">
@@ -87,7 +91,7 @@
                 <p class="install-sub" id="osLine">Compatível com Windows 10/11 · 64-bit</p>
               </div>
               <a href="#" class="btn btn-primary install-btn" id="installBtn" download>
-                DESCARREGAR APP &nbsp;↓
+                Descarregar app ↓
               </a>
             </div>
 
@@ -96,7 +100,9 @@
                 <span id="progressLabel">A preparar download…</span>
                 <span id="progressPct">0%</span>
               </div>
-              <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+              <div class="progress-track">
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
               <p class="progress-foot" id="progressFoot">A verificar versão disponível</p>
             </div>
           </div>
@@ -109,40 +115,78 @@
         </div>
       </section>
 
-      <section class="section" id="info">
-        <div class="section-head">
-          <span class="section-num">02</span>
-          <h2>O que vais receber</h2>
-        </div>
-        <div class="features-grid">
-          <article class="feature">
-            <span class="feature-icon">⊞</span>
-            <h3>Aplicação completa</h3>
-            <p>A app Computational Processing pronta a executar no teu sistema.</p>
-          </article>
-          <article class="feature">
-            <span class="feature-icon">⌘</span>
-            <h3>Conteúdo do projeto</h3>
-            <p>Material da UFCD 0802 organizado dentro da própria app.</p>
-          </article>
-          <article class="feature">
-            <span class="feature-icon">✦</span>
-            <h3>Atualizações futuras</h3>
-            <p>Esta página será mantida sempre que sair uma nova versão.</p>
-          </article>
+      <!-- O QUE VAIS RECEBER -->
+      <section>
+        <div class="section-inner" id="info">
+          <p class="section-label">02 — conteúdo</p>
+          <h2 class="section-title">O que vais receber</h2>
+          <p class="section-desc">Tudo o que precisas num único ficheiro.</p>
+
+          <div class="features-grid">
+            <article class="feature">
+              <span class="feature-icon">⊞</span>
+              <h3>Aplicação completa</h3>
+              <p>A app Computational Processing pronta a executar no teu sistema.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon">⌘</span>
+              <h3>Conteúdo do projeto</h3>
+              <p>Material da UFCD 0802 organizado dentro da própria app.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon">✦</span>
+              <h3>Atualizações futuras</h3>
+              <p>Esta página será mantida sempre que sair uma nova versão.</p>
+            </article>
+          </div>
         </div>
       </section>
-    </main>
 
-    <footer class="footer">
+    </div><!-- /page-wrap -->
+
+    <footer class="site-footer">
       <div class="footer-line">
-        <span>UFCD 0802 · Processamento Computacional</span>
+        <span>UFCD 0802</span>
         <span class="dot">·</span>
-        <span>Página de download da app</span>
+        <span>Processamento Computacional</span>
+        <span class="dot">·</span>
+        <span>Página de download</span>
       </div>
-      <a href="./installer.html" class="back-top">← INSTALLER</a>
+      <a href="./index.html" class="back-top">← Installer</a>
     </footer>
 
     <script src="./script.js"></script>
+    <script>
+      // Nav toggle
+      const toggle = document.getElementById('navToggle');
+      const links  = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+      }
+
+      // OS tab switcher
+      const osData = {
+        windows: { name: 'Windows', sub: 'Compatível com Windows 10/11 · 64-bit' },
+        macos:   { name: 'macOS',   sub: 'Compatível com macOS 12 Monterey ou superior' },
+        linux:   { name: 'Linux',   sub: 'Disponível para distribuições Debian/Ubuntu e RPM' },
+      };
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const os = tab.dataset.os;
+          document.getElementById('osName').textContent = osData[os].name;
+          document.getElementById('osLine').textContent = osData[os].sub;
+        });
+      });
+
+      // Scroll reveal
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.feature').forEach(el => observer.observe(el));
+    </script>
   </body>
 </html>
