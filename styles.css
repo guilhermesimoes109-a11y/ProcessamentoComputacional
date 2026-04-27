@@ -977,6 +977,7 @@ section { position: relative; z-index: 1; }
 
 /* AUTORES */
 .autores-grid {
+  justify-content: center
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
