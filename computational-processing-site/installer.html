@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installer — Computational Processing</title>
-    <meta name="description" content="Bem-vindos ao installer da app Computational Processing." />
+    <title>Download — Computational Processing</title>
+    <meta name="description" content="A app Computational Processing está pronta para download." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
@@ -15,8 +15,8 @@
     <nav class="site-nav">
       <span class="nav-logo">UFCD_0802</span>
       <ul class="nav-links" id="navLinks">
-        <li><a href="./index.html" class="active">Installer</a></li>
-        <li><a href="./download.html">Download</a></li>
+        <li><a href="./index.html">Installer</a></li>
+        <li><a href="./download.html" class="active">Download</a></li>
         <li><a href="https://ufcd-0802-processamento-computacion.vercel.app/" target="_blank" rel="noopener">Site principal ↗</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -30,97 +30,116 @@
       <section class="hero">
         <div class="hero-grid"></div>
 
-        <div class="hero-tag">UFCD 0802 — App Computational Processing</div>
+        <div class="hero-tag">Download · Pronto a instalar</div>
 
         <h1>
-          Bem&#8209;vindos ao<br />
-          <span class="muted">installer</span> da app
+          <span class="muted">Computational</span><br />
+          Processing
         </h1>
 
-        <p class="hero-sub">Computational Processing · Hardware &amp; Software</p>
-        <p class="hero-meta-line">Uma extensão do projeto UFCD 0802</p>
+        <p class="hero-sub">A aplicação está disponível para o teu sistema</p>
+        <p class="hero-meta-line">UFCD 0802 · App oficial do projeto</p>
 
         <div class="meta-row">
-          <div class="meta-cell">
-            <span class="meta-label">Projeto</span>
-            <span class="meta-value">UFCD 0802</span>
-          </div>
           <div class="meta-cell">
             <span class="meta-label">App</span>
             <span class="meta-value">Comp. Processing</span>
           </div>
           <div class="meta-cell">
-            <span class="meta-label">Formador</span>
-            <span class="meta-value">Prof. Nuno Ramos</span>
+            <span class="meta-label">Versão</span>
+            <span class="meta-value">1.0.0</span>
           </div>
           <div class="meta-cell">
-            <span class="meta-label">Ano</span>
-            <span class="meta-value">2025 / 2026</span>
+            <span class="meta-label">Plataformas</span>
+            <span class="meta-value">Android · Iphone · Linux</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">Licença</span>
+            <span class="meta-value">Educacional</span>
           </div>
         </div>
 
         <div class="hero-actions">
-          <a href="./download.html" class="btn btn-primary">Ir para o download →</a>
-          <a href="#sobre" class="btn btn-ghost">Saber mais</a>
+          <a href="#download" class="btn btn-primary">Ver opções ↓</a>
+          <a href="./index.html" class="btn btn-ghost">← Voltar</a>
         </div>
       </section>
 
-      <!-- SOBRE -->
+      <!-- DOWNLOAD -->
       <section>
-        <div class="section-inner" id="sobre">
-          <p class="section-label">01 — sobre</p>
-          <h2 class="section-title">Sobre o installer</h2>
+        <div class="section-inner" id="download">
+          <p class="section-label">01 — download</p>
+          <h2 class="section-title">Escolhe o teu sistema</h2>
           <div class="section-body">
             <p>
-              Este installer é uma extensão do site da
-              <strong>UFCD 0802 — Processamento Computacional</strong> e serve um
-              único propósito: permitir aceder à aplicação
-              <strong>Computational Processing</strong> de forma simples, sem
-              precisar de procurar ficheiros espalhados pela internet.
+              Seleciona o teu sistema operativo e carrega no botão de download.
+              O ficheiro da app <strong>Computational Processing</strong> será
+              colocado aqui posteriormente.
             </p>
-            <p>
-              A app reúne o que foi explorado ao longo do módulo —
-              arquitetura, montagem, sistemas operativos e deteção de avarias —
-              num formato prático e instalável.
-            </p>
-            <p class="note">
-              Carrega em "Ir para o download" para chegares à página
-              onde a app fica disponível.
-            </p>
+          </div>
+
+          <div class="install-tabs" role="tablist">
+            <button class="tab active" data-os="Android" role="tab">
+              <img src="AndroidInstaller.webp" width="24" height="24" alt="Android" />
+              Android
+            </button>
+            <button class="tab" data-os="iPhone" role="tab">
+              <img src="apple.webp" width="24" height="24" alt="iPhone" />
+              Iphone
+            </button>
+            <button class="tab" data-os="linux" role="tab">
+              <img src="Linuxinstaller.webp" width="24" height="24" alt="Linux" />
+              Linux
+            </button>
+          </div>
+
+          <div class="install-panel" id="installPanel">
+            <div class="install-info">
+              <p class="install-title">Download para <span id="osName">Android</span></p>
+              <p class="install-sub" id="osLine">Compatível com versões Android =<14</p>
+            </div>
+            <a href="#" class="btn btn-primary install-btn" id="installBtn" download>
+              Descarregar app ↓
+            </a>
+          </div>
+
+          <div class="progress" id="progress" hidden>
+            <div class="progress-head">
+              <span id="progressLabel">A preparar download…</span>
+              <span id="progressPct">0%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-foot" id="progressFoot">A verificar versão disponível</p>
           </div>
         </div>
       </section>
 
-      <!-- COMO FUNCIONA -->
+      <!-- O QUE VAIS RECEBER -->
       <section>
-        <div class="section-inner" id="passos">
-          <p class="section-label">02 — passos</p>
-          <h2 class="section-title">Como funciona</h2>
-          <p class="section-desc">Três passos simples para obteres a app.</p>
+        <div class="section-inner" id="info">
+          <p class="section-label">02 — conteúdo</p>
+          <h2 class="section-title">O que vais receber</h2>
+          <p class="section-desc">Tudo o que precisas num único ficheiro.</p>
 
-          <ol class="steps-list">
-            <li class="step-item">
-              <span class="step-num">1</span>
-              <div class="step-content">
-                <h3 class="step-title">Bem-vindo</h3>
-                <p class="step-body">Estás nesta página inicial do installer.</p>
-              </div>
-            </li>
-            <li class="step-item">
-              <span class="step-num">2</span>
-              <div class="step-content">
-                <h3 class="step-title">Avança para o download</h3>
-                <p class="step-body">Carrega no botão para ires à página de download.</p>
-              </div>
-            </li>
-            <li class="step-item">
-              <span class="step-num">3</span>
-              <div class="step-content">
-                <h3 class="step-title">Obtém a app</h3>
-                <p class="step-body">A aplicação Computational Processing fica disponível ali, pronta a descarregar para o teu sistema.</p>
-              </div>
-            </li>
-          </ol>
+          <div class="features-grid">
+            <article class="feature">
+              <span class="feature-icon">⊞</span>
+              <h3>Aplicação completa</h3>
+              <p>A app Computational Processing pronta a executar no teu sistema.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon">⌘</span>
+              <h3>Conteúdo do projeto</h3>
+              <p>Material da UFCD 0802 organizado dentro da própria app.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon">✦</span>
+              <h3>Atualizações futuras</h3>
+              <p>Esta página será mantida sempre que sair uma nova versão.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -130,11 +149,11 @@
       <div class="footer-line">
         <span>UFCD 0802</span>
         <span class="dot">·</span>
-        <span>Processamento Computacional</span>
+        <span>Processamento Computational</span>
         <span class="dot">·</span>
-        <span>Installer</span>
+        <span>Página de download</span>
       </div>
-      <a href="./download.html" class="back-top">Download →</a>
+      <a href="./index.html" class="back-top">← Installer</a>
     </footer>
 
     <script src="./script.js"></script>
@@ -146,12 +165,29 @@
         toggle.addEventListener('click', () => links.classList.toggle('open'));
       }
 
+      // OS tab switcher
+      const osData = {
+        Android: { name: 'Android', sub: 'Compatível com versões de Android iguais ou inferiores a Android 14' },
+        iPhone:  { name: 'IOS',     sub: 'Compatível com versões de IOS iguais ou inferiores a IOS 17' },
+        linux:   { name: 'Linux',   sub: 'Disponível para distribuições Debian/Ubuntu e RPM' },
+      };
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const os = tab.dataset.os;
+          document.getElementById('osName').textContent = osData[os].name;
+          document.getElementById('osLine').textContent = osData[os].sub;
+        });
+      });
+
       // Scroll reveal
       const observer = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
       }, { threshold: 0.15 });
 
-      document.querySelectorAll('.step-item').forEach(el => observer.observe(el));
+      document.querySelectorAll('.feature').forEach(el => observer.observe(el));
     </script>
   </body>
 </html>
