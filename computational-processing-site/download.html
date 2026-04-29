@@ -80,9 +80,9 @@
 
           <div class="install-card">
             <div class="install-tabs" role="tablist">
-              <button class="tab active" data-os="windows" role="tab">Android</button>
-              <button class="tab" data-os="macos" role="tab">Iphone</button>
-              <button class="tab" data-os="linux" role="tab">Linux</button>
+              <button img src="AndroidInstaller.webp" width="24" height="24" class="tab active" data-os="windows" role="tab">Android</button>
+              <button img src="apple.webp" width="24" height="24" class="tab" data-os="macos" role="tab">Iphone</button>
+              <button img src="Linuxinstaller.webp" width="24" height="24" alt="Linux Installer" class="tab" data-os="linux" role="tab">Linux</button>
             </div>
 
             <div class="install-panel" id="installPanel">
@@ -166,8 +166,8 @@
 
       // OS tab switcher
       const osData = {
-        windows: { name: 'Windows', sub: 'Compatível com Windows 10/11 · 64-bit' },
-        macos:   { name: 'macOS',   sub: 'Compatível com macOS 12 Monterey ou superior' },
+        windows: { name: 'Windows', sub: 'Compatível com versões de Android iguais ou inferiores a Android 14' },
+        macos:   { name: 'macOS',   sub: 'Compatível com versões de IOS iguais ou inferiores a IOS 17' },
         linux:   { name: 'Linux',   sub: 'Disponível para distribuições Debian/Ubuntu e RPM' },
       };
 
