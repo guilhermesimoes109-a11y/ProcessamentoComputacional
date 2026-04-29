@@ -18,7 +18,12 @@
   --radius-md: 8px;
   --radius-pill: 999px;
 }
-
+.icone {
+  background-image: url('icone.svg');
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
