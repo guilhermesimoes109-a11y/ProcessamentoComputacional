@@ -78,41 +78,42 @@
             </p>
           </div>
 
-    <div class="install-tabs" role="tablist">
-      <button class="tab active" data-os="Android" role="tab">
-      <img src="AndroidInstaller.webp" width="24" height="24" alt="Android" />
-      Android
-    </button>
-    <button class="tab" data-os="IOS" role="tab">
-      <img src="apple.webp" width="24" height="24" alt="iPhone" />
-      Iphone
-    </button>
-    <button class="tab" data-os="linux" role="tab">
-      <img src="Linuxinstaller.webp" width="24" height="24" alt="Linux" />
-      Linux
-    </button>
-  </div>
+          <div class="install-tabs" role="tablist">
+            <button class="tab active" data-os="Android" role="tab">
+              <img src="AndroidInstaller.webp" width="24" height="24" alt="Android" />
+              Android
+            </button>
+            <button class="tab" data-os="iPhone" role="tab">
+              <img src="apple.webp" width="24" height="24" alt="iPhone" />
+              Iphone
+            </button>
+            <button class="tab" data-os="linux" role="tab">
+              <img src="Linuxinstaller.webp" width="24" height="24" alt="Linux" />
+              Linux
+            </button>
+          </div>
 
-            <div class="install-panel" id="installPanel">
-              <div class="install-info">
-                <p class="install-title">Download para <span id="osName">Android</span></p>
-                <p class="install-sub" id="osLine">Compatível com versões Android =<14</p>
-              </div>
-              <a href="#" class="btn btn-primary install-btn" id="installBtn" download>
-                Descarregar app ↓
-              </a>
+          <div class="install-panel" id="installPanel">
+            <div class="install-info">
+              <p class="install-title">Download para <span id="osName">Android</span></p>
+              <p class="install-sub" id="osLine">Compatível com versões Android =<14</p>
             </div>
+            <a href="#" class="btn btn-primary install-btn" id="installBtn" download>
+              Descarregar app ↓
+            </a>
+          </div>
 
-            <div class="progress" id="progress" hidden>
-              <div class="progress-head">
-                <span id="progressLabel">A preparar download…</span>
-                <span id="progressPct">0%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" id="progressBar"></div>
-              </div>
-              <p class="progress-foot" id="progressFoot">A verificar versão disponível</p>
+          <div class="progress" id="progress" hidden>
+            <div class="progress-head">
+              <span id="progressLabel">A preparar download…</span>
+              <span id="progressPct">0%</span>
             </div>
+            <div class="progress-track">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-foot" id="progressFoot">A verificar versão disponível</p>
+          </div>
+        </div>
       </section>
 
       <!-- O QUE VAIS RECEBER -->
@@ -148,11 +149,11 @@
       <div class="footer-line">
         <span>UFCD 0802</span>
         <span class="dot">·</span>
-        <span>Processamento Computacional</span>
+        <span>Processamento Computational</span>
         <span class="dot">·</span>
         <span>Página de download</span>
       </div>
-      <a href="./installer.html" class="back-top">← Installer</a>
+      <a href="./index.html" class="back-top">← Installer</a>
     </footer>
 
     <script src="./script.js"></script>
@@ -167,7 +168,7 @@
       // OS tab switcher
       const osData = {
         Android: { name: 'Android', sub: 'Compatível com versões de Android iguais ou inferiores a Android 14' },
-        iPhone:   { name: 'IOS',   sub: 'Compatível com versões de IOS iguais ou inferiores a IOS 17' },
+        iPhone:  { name: 'IOS',     sub: 'Compatível com versões de IOS iguais ou inferiores a IOS 17' },
         linux:   { name: 'Linux',   sub: 'Disponível para distribuições Debian/Ubuntu e RPM' },
       };
 
