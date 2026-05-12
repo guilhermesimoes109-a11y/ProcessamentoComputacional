@@ -72,47 +72,14 @@
           <h2 class="section-title">Escolhe o teu sistema</h2>
           <div class="section-body">
             <p>
-              Seleciona o teu sistema operativo e carrega no botão de download.
-              O ficheiro da app <strong>Computational Processing</strong> será
-              colocado aqui posteriormente.
+              Aponta a câmara do teu dispositivo para o QR code e faz o download da
+              app <strong>Computational Processing</strong>.
             </p>
           </div>
 
-          <div class="install-tabs" role="tablist">
-            <button class="tab active" data-os="Android" role="tab">
-              <img src="AndroidInstaller.webp" width="24" height="24" alt="Android" />
-              Android
-            </button>
-            <button class="tab" data-os="iPhone" role="tab">
-              <img src="apple.webp" width="24" height="24" alt="iPhone" />
-              Iphone
-            </button>
-            <button class="tab" data-os="linux" role="tab">
-              <img src="Linuxinstaller.webp" width="24" height="24" alt="Linux" />
-              Linux
-            </button>
-          </div>
-
-          <div class="install-panel" id="installPanel">
-            <div class="install-info">
-              <p class="install-title">Download para <span id="osName">Android</span></p>
-              <p class="install-sub" id="osLine">Compatível com versões Android =<14</p>
-            </div>
-            <a href="#" class="btn btn-primary install-btn" id="installBtn" download>
-              Descarregar app ↓
-            </a>
-          </div>
-          <p id="osVersion" style="margin-top:0.75rem;font-size:0.875rem;opacity:0.6;">Versão disponível: 1.0.0 para Android</p>
-
-          <div class="progress" id="progress" hidden>
-            <div class="progress-head">
-              <span id="progressLabel">A preparar download…</span>
-              <span id="progressPct">0%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <p class="progress-foot" id="progressFoot">A verificar versão disponível</p>
+          <div class="install-panel" style="justify-content:center;flex-direction:column;align-items:center;gap:1.25rem;">
+            <img src="qr.png" alt="QR Code de download" style="width:200px;height:200px;border-radius:12px;display:block;" />
+            <p class="install-sub" style="text-align:center;">Aponta a câmara do teu dispositivo para fazer o download</p>
           </div>
         </div>
       </section>
@@ -156,6 +123,7 @@
       </div>
       <a href="./index.html" class="back-top">← Installer</a>
     </footer>
+
     <script>
       // Nav toggle
       const toggle = document.getElementById('navToggle');
@@ -163,24 +131,6 @@
       if (toggle && links) {
         toggle.addEventListener('click', () => links.classList.toggle('open'));
       }
-
-      // OS tab switcher
-      const osData = {
-        Android: { name: 'Android', sub: 'Compatível com versões de Android iguais ou inferiores a Android 14', version: 'Versão disponível: 1.0.0 para Android' },
-        iPhone:  { name: 'IOS',     sub: 'Compatível com versões de IOS iguais ou inferiores a IOS 17',          version: 'Versão disponível: 1.0.0 para iOS' },
-        linux:   { name: 'Linux',   sub: 'Disponível para distribuições Debian/Ubuntu e RPM',                    version: 'Versão disponível: 1.0.0 para Linux' },
-      };
-
-      document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          const os = tab.dataset.os;
-          document.getElementById('osName').textContent = osData[os].name;
-          document.getElementById('osLine').textContent = osData[os].sub;
-          document.getElementById('osVersion').textContent = osData[os].version;
-        });
-      });
 
       // Scroll reveal
       const observer = new IntersectionObserver(entries => {
